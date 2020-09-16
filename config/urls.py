@@ -29,8 +29,10 @@ schema_view = get_schema_view(
 )
 
 docs = [
-    path('docs/', login_required(schema_view.with_ui('swagger', cache_timeout=None),
-                                 login_url='/admin/login/'), name='schema-swagger-ui'),
+    path('docs/', login_required(schema_view.with_ui('swagger',
+                                                     cache_timeout=None),
+                                 login_url='/admin/login/'),
+         name='schema-swagger-ui'),
 ]
 
 urlpatterns = public_apis + docs + [
