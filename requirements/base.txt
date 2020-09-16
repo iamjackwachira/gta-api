@@ -1,0 +1,12 @@
+# Django
+# ------------------------------------------------------------------------------
+django==3.1.1  # https://www.djangoproject.com/
+django-environ==0.4.5  # https://github.com/joke2k/django-environ
+
+# Django REST Framework
+djangorestframework==3.11.0  # https://github.com/encode/django-rest-framework
+
+django-model-utils==4.0.0 # https://django-model-utils.readthedocs.io/en/latest/fields.html
+django-filter==2.2.0
+drf-yasg==1.17.0
+django-cors-headers
