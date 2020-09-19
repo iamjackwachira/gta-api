@@ -2,9 +2,11 @@ from django.urls import include, path
 from django.contrib import admin
 from django.contrib.auth.decorators import login_required
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+from django.views.decorators.csrf import csrf_exempt
 
 from drf_yasg import openapi
 from drf_yasg.views import get_schema_view
+from graphene_django.views import GraphQLView
 from rest_framework import permissions
 
 from . import api
@@ -37,6 +39,7 @@ docs = [
 
 urlpatterns = public_apis + docs + [
     path('admin/', admin.site.urls),
+    path('graphql/', csrf_exempt(GraphQLView.as_view(graphiql=False))),
 ]
 
 

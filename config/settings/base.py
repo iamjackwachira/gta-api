@@ -40,8 +40,9 @@ DJANGO_APPS = [
 ]
 
 THIRD_PARTY_APPS = [
+    "graphene_django",
     "rest_framework",
-    "drf_yasg"
+    "drf_yasg",
 ]
 
 LOCAL_APPS = [
@@ -143,3 +144,7 @@ STATICFILES_FINDERS = [
     "django.contrib.staticfiles.finders.FileSystemFinder",
     "django.contrib.staticfiles.finders.AppDirectoriesFinder",
 ]
+
+GRAPHENE = {
+    'SCHEMA': 'config.schema.schema'
+}
