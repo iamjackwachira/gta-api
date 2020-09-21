@@ -7,7 +7,7 @@ import weapons.choices as choices
 
 
 class WeaponRealLife(BaseModelWithName):
-    """ Real life weapon """
+    """ Real life equivalent weapon """
     pass
 
 
@@ -22,10 +22,11 @@ class Weapon(BaseModelWithName):
     ammo_capacity = models.PositiveSmallIntegerField()
     extended_ammo = models.PositiveSmallIntegerField()
     weapon_type = models.CharField(choices=choices.WEAPON_TYPE_CHOICES, max_length=70)
-    available_from = models.CharField(choices=choices.WEAPON_LOCATIONS, blank=True, null=True, max_length=50)
+    available_from = models.CharField(choices=choices.WEAPON_AVAILABLE_FROM_CHOICES,
+                                      blank=True, null=True, max_length=50)
     release_date = models.DateField(null=True, blank=True)
     purchase_price = models.DecimalField(max_digits=20, decimal_places=2, validators=[MinValueValidator(1)])
-    modifications = models.CharField(choices=choices.WEAPON_MODIFICATIONS, blank=True, null=True, max_length=50)
+    modifications = models.CharField(choices=choices.WEAPON_MODIFICATIONS_CHOICES, blank=True, null=True, max_length=50)
     weapon_real_life = models.ForeignKey(WeaponRealLife, null=True, blank=True,
                                          on_delete=models.SET_NULL, related_name="weapons")
     game_edition_mode = models.CharField(choices=GAME_EDITION_CHOICES, max_length=50, null=True, blank=True)

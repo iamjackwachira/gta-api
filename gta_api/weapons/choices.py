@@ -13,7 +13,7 @@ WEAPON_TYPE_CHOICES = Choices(
     ('mounted_weapons', _('Mounted Weapons')),
 )
 
-WEAPON_LOCATIONS = Choices(
+WEAPON_AVAILABLE_FROM_CHOICES = Choices(
     ('ammu_nation', _('Ammu Nation')),
     ('weapon_workshop', _('Weapon Workshop')),
     ('stolen_found', _('Is Stolen/Found')),
@@ -22,7 +22,7 @@ WEAPON_LOCATIONS = Choices(
     ('merry_weather_security_services', _('Merry Weather Security Services')),
 )
 
-WEAPON_MODIFICATIONS = Choices(
+WEAPON_MODIFICATIONS_CHOICES = Choices(
     ('can_be_modified', _('Can be modified')),
     ('cannot_be_modified', _('Cannot be modified')),
 )

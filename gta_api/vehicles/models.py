@@ -7,12 +7,12 @@ import vehicles.choices as choices
 
 
 class VehicleRealLife(BaseModelWithName):
-    """ Real life vehicle that is based on e.g Lamborghini """
+    """ Real life equivalent vehicle e.g Lamborghini """
     pass
 
 
 class VehicleManufacturerRealLife(BaseModelWithName):
-    """ Real life manufacturer for the vehicle e.g Jaguar """
+    """ Real life equivalent manufacturer e.g Jaguar """
     pass
 
 
