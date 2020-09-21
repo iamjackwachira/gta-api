@@ -2,6 +2,7 @@ from django.db import models
 from django.core.validators import MaxValueValidator, MinValueValidator
 
 from core.models import BaseModelWithName
+from core.choices import GAME_EDITION_CHOICES
 import vehicles.choices as choices
 
 
@@ -57,7 +58,7 @@ class Vehicle(BaseModelWithName):
                                           validators=[MinValueValidator(1), MaxValueValidator(5)])
     braking_rating = models.DecimalField(max_digits=2, decimal_places=1,
                                          validators=[MinValueValidator(1), MaxValueValidator(5)])
-    game_edition_mode = models.CharField(choices=choices.GAME_EDITION_CHOICES, max_length=50, null=True, blank=True)
+    game_edition_mode = models.CharField(choices=GAME_EDITION_CHOICES, max_length=50, null=True, blank=True)
     special_features = models.CharField(choices=choices.VEHICLE_SPECIAL_FEATURES_CHOICES, max_length=20,
                                         null=True, blank=True)
     manufacturer = models.ForeignKey(VehicleManufacturer, on_delete=models.CASCADE, related_name="vehicles")
