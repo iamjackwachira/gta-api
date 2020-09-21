@@ -1,5 +1,6 @@
-from django.urls import include, path # noqa
+from django.urls import include, path
 
 
 urlpatterns = [
+     path('', include('vehicles.urls')),
 ]

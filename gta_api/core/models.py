@@ -14,7 +14,7 @@ class BaseModel(models.Model):
 
 
 class BaseModelWithName(BaseModel):
-    name = models.CharField(max_length=70)
+    name = models.CharField(max_length=70, unique=True)
 
     class Meta:
         abstract = True
