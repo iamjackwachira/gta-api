@@ -17,3 +17,11 @@ class Property(BaseModelWithName):
     vehicle_capacity = models.PositiveSmallIntegerField()
     release_date = models.DateField(null=True, blank=True)
     game_edition_mode = models.CharField(choices=GAME_EDITION_CHOICES, max_length=50, null=True, blank=True)
+
+    class Meta:
+        ordering = ['-created_on']
+        verbose_name = 'Property'
+        verbose_name_plural = 'Properties'
+
+    def __str__(self):
+        return self.name

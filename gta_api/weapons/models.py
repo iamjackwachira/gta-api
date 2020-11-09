@@ -41,3 +41,11 @@ class Weapon(BaseModelWithName):
                                        validators=[MinValueValidator(1), MaxValueValidator(5)])
     clip_size_rating = models.DecimalField(max_digits=2, decimal_places=1,
                                            validators=[MinValueValidator(1), MaxValueValidator(5)])
+
+    class Meta:
+        ordering = ['-created_on']
+        verbose_name = 'Weapon'
+        verbose_name_plural = 'Weapons'
+
+    def __str__(self):
+        return self.name
